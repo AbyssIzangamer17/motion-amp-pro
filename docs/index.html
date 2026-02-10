@@ -6,59 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motion Amp Pro - Real-Time Video Magnification</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Oswald:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --primary: #00ff64;
-            --bg-dark: #121212;
-            --text-light: #ecf0f1;
-            --card-bg: #1e1e1e;
+            --t21p-red: #E10000;
+            --t21p-yellow: #FCE300;
+            --bg-dark: #000000;
+            --text-light: #ffffff;
+            --card-bg: #111111;
+            --accent: #E10000;
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Courier Prime', monospace;
             background-color: var(--bg-dark);
             color: var(--text-light);
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            background-image:
+                radial-gradient(circle at 50% 50%, rgba(225, 0, 0, 0.05) 0%, transparent 80%),
+                repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255, 255, 255, 0.02) 1px, rgba(255, 255, 255, 0.02) 2px);
         }
 
         header {
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
             text-align: center;
-            border-bottom: 1px solid #333;
+            border-bottom: 2px solid var(--t21p-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "|-/";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--t21p-red);
+            opacity: 0.5;
+            font-weight: bold;
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: -webkit-linear-gradient(var(--text-light), var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Oswald', sans-serif;
+            font-size: 5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: #fff;
+            text-shadow: 3px 3px 0px var(--t21p-red);
+            animation: glitch 3s infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px 0px var(--t21p-red);
+            }
+
+            50% {
+                text-shadow: -2px -2px 0px var(--t21p-yellow);
+            }
+
+            100% {
+                text-shadow: 2px -2px 0px #fff;
+            }
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            color: #bdc3c7;
+            font-family: 'Courier Prime', monospace;
+            font-size: 1.2rem;
+            color: #fff;
             margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: var(--t21p-red);
+            display: inline-block;
+            padding: 5px 15px;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--primary);
-            color: #000;
-            padding: 12px 30px;
+            background-color: transparent;
+            color: #fff;
+            padding: 12px 35px;
+            font-family: 'Oswald', sans-serif;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 5px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            border: 2px solid #fff;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 255, 100, 0.3);
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
         .container {
@@ -75,41 +121,86 @@
 
         .feature-card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid #333;
+            padding: 2.5rem;
+            border-radius: 0;
+            border-left: 5px solid var(--t21p-red);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.02);
+            background: #080808;
         }
 
         .feature-card h3 {
-            color: var(--primary);
+            font-family: 'Oswald', sans-serif;
+            color: var(--t21p-red);
             margin-top: 0;
+            text-transform: uppercase;
+            font-size: 1.8rem;
         }
 
         .demo-section {
             text-align: center;
-            margin: 4rem 0;
-            background: #000;
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid #333;
+            margin: 6rem 0;
+            background: #050505;
+            padding: 3rem;
+            border: 1px solid #222;
+            position: relative;
+        }
+
+        .demo-section::after {
+            content: "CLANCY / VESTIGE";
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 5px;
         }
 
         .code-block {
-            background: #2d2d2d;
-            padding: 1.5rem;
-            border-radius: 5px;
-            font-family: 'Fira Code', monospace;
+            background: #000;
+            border: 1px dashed #444;
+            padding: 2rem;
+            font-family: 'Courier Prime', monospace;
             overflow-x: auto;
             text-align: left;
-            color: #f8f8f2;
+            color: #fff;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: "SYSTEM_INPUT";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: #000;
+            padding: 0 10px;
+            font-size: 0.7rem;
+            color: var(--t21p-red);
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
-            border-top: 1px solid #333;
+            padding: 4rem;
+            border-top: 1px solid #222;
             margin-top: 4rem;
-            color: #7f8c8d;
+            color: #444;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .t21p-logo {
+            font-weight: bold;
+            color: var(--t21p-red);
+        }
+
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-size: 2.5rem;
         }
     </style>
 </head>
@@ -118,40 +209,43 @@
 
     <header>
         <h1>Motion Amp Pro</h1>
-        <p class="hero-subtitle">Visualiza lo invisible. Amplificación de Movimiento Euleriano en Tiempo Real.</p>
-        <a href="https://github.com/AbyssIzangamer17/motion-amp-pro" class="btn">Ver en GitHub</a>
+        <p class="hero-subtitle">Scale the icy peaks of perception.</p>
+        <br>
+        <a href="https://github.com/AbyssIzangamer17/motion-amp-pro" class="btn">Enter the Trench</a>
     </header>
 
     <div class="container">
         <div class="demo-section">
-            <h2>Live Demo (Preview)</h2>
-            <p>Detecta el pulso humano y vibraciones mecánicas imperceptibles.</p>
+            <h2>Live Feed / Visual Archive</h2>
+            <p>Capturing the pulse of the unseen. Tracking vibrations in the static.</p>
             <div
-                style="background: #111; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 5px; border: 1px dashed #444;">
-                <span style="color: #666;">[GIF Demo Placeholder - Sube un GIF a tu repo y enlázalo aquí]</span>
+                style="background: #000; height: 350px; display: flex; align-items: center; justify-content: center; border: 2px solid #222; position: relative;">
+                <span style="color: #333; font-style: italic;">[ Archive_Footage_Required ]</span>
+                <div style="position: absolute; top: 10px; left: 10px; color: var(--t21p-red); font-size: 0.6rem;">REC ●
+                    00:00:21:09</div>
             </div>
         </div>
 
         <div class="features">
             <div class="feature-card">
-                <h3>🔬 Eulerian Magnification</h3>
-                <p>Algoritmo basado en filtrado temporal IIR sobre una pirámide Laplaciana para aislar y amplificar
-                    micro-movimientos espaciales.</p>
+                <h3>01 / Eulerian Core</h3>
+                <p>Advanced temporal filtering algorithms derived from the depths of Dema. Isolating frequencies beyond
+                    the human horizon.</p>
             </div>
             <div class="feature-card">
-                <h3>⚡ Ultra-Baja Latencia</h3>
-                <p>Pipeline asíncrono optimizado con Python 3.12+ y OpenCV. Procesa vídeo HD en tiempo real sin retrasos
-                    perceptibles.</p>
+                <h3>02 / Zero Latency</h3>
+                <p>Asynchronous pipelines built for the escape. Real-time processing that keeps pace with the beat of
+                    your heart.</p>
             </div>
             <div class="feature-card">
-                <h3>🎛️ Control Total</h3>
-                <p>Ajusta la frecuencia de banda, el factor Alpha y el brillo de la cámara al vuelo con un HUD
-                    profesional.</p>
+                <h3>03 / Total Command</h3>
+                <p>Manipulate Alpha, Frequencies, and Exposure. A HUD designed for the few, the proud, and the
+                    emotional.</p>
             </div>
         </div>
 
-        <div class="container">
-            <h2>Instalación Rápida</h2>
+        <div class="container" style="margin-top: 8rem; text-align: center;">
+            <h2>Initial Sequence</h2>
             <div class="code-block">
                 git clone https://github.com/AbyssIzangamer17/motion-amp-pro.git<br>
                 cd motion-amp-pro<br>
@@ -162,7 +256,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Motion Amp Pro. Desarrollado con 💚 y Python.</p>
+        <p>Stay Alive. &copy; 2026 <span class="t21p-logo">|-/</span> Motion Amp Pro</p>
     </footer>
 
 </body>

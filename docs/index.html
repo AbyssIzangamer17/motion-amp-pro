@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Amp Pro - Real-Time Video Magnification</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ff64;
+            --bg-dark: #121212;
+            --text-light: #ecf0f1;
+            --card-bg: #1e1e1e;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: -webkit-linear-gradient(var(--text-light), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #bdc3c7;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #000;
+            padding: 12px 30px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 100, 0.3);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .demo-section {
+            text-align: center;
+            margin: 4rem 0;
+            background: #000;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            padding: 1.5rem;
+            border-radius: 5px;
+            font-family: 'Fira Code', monospace;
+            overflow-x: auto;
+            text-align: left;
+            color: #f8f8f2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #333;
+            margin-top: 4rem;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Motion Amp Pro</h1>
+        <p class="hero-subtitle">Visualiza lo invisible. Amplificación de Movimiento Euleriano en Tiempo Real.</p>
+        <a href="https://github.com/AbyssIzangamer17/motion-amp-pro" class="btn">Ver en GitHub</a>
+    </header>
+
+    <div class="container">
+        <div class="demo-section">
+            <h2>Live Demo (Preview)</h2>
+            <p>Detecta el pulso humano y vibraciones mecánicas imperceptibles.</p>
+            <div
+                style="background: #111; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 5px; border: 1px dashed #444;">
+                <span style="color: #666;">[GIF Demo Placeholder - Sube un GIF a tu repo y enlázalo aquí]</span>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>🔬 Eulerian Magnification</h3>
+                <p>Algoritmo basado en filtrado temporal IIR sobre una pirámide Laplaciana para aislar y amplificar
+                    micro-movimientos espaciales.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚡ Ultra-Baja Latencia</h3>
+                <p>Pipeline asíncrono optimizado con Python 3.12+ y OpenCV. Procesa vídeo HD en tiempo real sin retrasos
+                    perceptibles.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎛️ Control Total</h3>
+                <p>Ajusta la frecuencia de banda, el factor Alpha y el brillo de la cámara al vuelo con un HUD
+                    profesional.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Instalación Rápida</h2>
+            <div class="code-block">
+                git clone https://github.com/AbyssIzangamer17/motion-amp-pro.git<br>
+                cd motion-amp-pro<br>
+                pip install -r requirements.txt<br>
+                python -m src.motion_amp.main
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Motion Amp Pro. Desarrollado con 💚 y Python.</p>
+    </footer>
+
+</body>
+
+</html>

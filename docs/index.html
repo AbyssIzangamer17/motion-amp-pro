@@ -15,7 +15,7 @@
             --t21p-yellow: #FCE300;
             --bg-dark: #000000;
             --text-light: #ffffff;
-            --card-bg: #111111;
+            --card-bg: #0a0a0a;
             --accent: #E10000;
         }
 
@@ -27,109 +27,120 @@
             padding: 0;
             line-height: 1.6;
             background-image:
-                radial-gradient(circle at 50% 50%, rgba(225, 0, 0, 0.05) 0%, transparent 80%),
-                repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255, 255, 255, 0.02) 1px, rgba(255, 255, 255, 0.02) 2px);
+                radial-gradient(circle at 50% 50%, rgba(225, 0, 0, 0.08) 0%, transparent 80%),
+                repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255, 255, 255, 0.01) 1px, rgba(255, 255, 255, 0.01) 2px);
         }
 
         header {
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
             text-align: center;
-            border-bottom: 2px solid var(--t21p-red);
+            border-bottom: 3px solid var(--t21p-red);
             position: relative;
             overflow: hidden;
+            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
         }
 
-        header::before {
-            content: "|-/";
+        header::after {
+            content: "";
             position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2rem;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .logo-symbol {
+            font-size: 3rem;
             color: var(--t21p-red);
-            opacity: 0.5;
             font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+            letter-spacing: 5px;
         }
 
         h1 {
             font-family: 'Oswald', sans-serif;
-            font-size: 5rem;
-            margin-bottom: 0.5rem;
+            font-size: 6rem;
+            margin: 0;
             text-transform: uppercase;
-            letter-spacing: -2px;
+            letter-spacing: -3px;
             color: #fff;
-            text-shadow: 3px 3px 0px var(--t21p-red);
-            animation: glitch 3s infinite alternate;
-        }
-
-        @keyframes glitch {
-            0% {
-                text-shadow: 2px 2px 0px var(--t21p-red);
-            }
-
-            50% {
-                text-shadow: -2px -2px 0px var(--t21p-yellow);
-            }
-
-            100% {
-                text-shadow: 2px -2px 0px #fff;
-            }
+            text-shadow: 4px 4px 0px var(--t21p-red);
+            line-height: 0.9;
         }
 
         .hero-subtitle {
             font-family: 'Courier Prime', monospace;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #fff;
-            margin-bottom: 2rem;
+            margin-top: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            background: var(--t21p-red);
+            letter-spacing: 4px;
+            border: 1px solid var(--t21p-red);
             display: inline-block;
-            padding: 5px 15px;
+            padding: 8px 20px;
+            background: rgba(225, 0, 0, 0.1);
         }
 
         .btn {
             display: inline-block;
-            background-color: transparent;
+            background-color: var(--t21p-red);
             color: #fff;
-            padding: 12px 35px;
+            padding: 15px 45px;
             font-family: 'Oswald', sans-serif;
             font-weight: bold;
             text-decoration: none;
             text-transform: uppercase;
-            border: 2px solid #fff;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            margin-top: 2.5rem;
+            letter-spacing: 2px;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
         }
 
         .btn:hover {
             background-color: #fff;
             color: #000;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            transform: scale(1.05) skew(-5deg);
+            box-shadow: 0 0 30px rgba(225, 0, 0, 0.5);
         }
 
         .container {
-            max-width: 1000px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            border-left: 8px solid var(--t21p-red);
+            padding-left: 20px;
+            margin-bottom: 4rem;
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
         }
 
         .feature-card {
             background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 0;
-            border-left: 5px solid var(--t21p-red);
-            transition: transform 0.3s ease;
+            padding: 3rem;
+            border: 1px solid #1a1a1a;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: scale(1.02);
-            background: #080808;
+            border-color: var(--t21p-red);
+            background: #0d0d0d;
+            transform: translateY(-10px);
         }
 
         .feature-card h3 {
@@ -137,70 +148,68 @@
             color: var(--t21p-red);
             margin-top: 0;
             text-transform: uppercase;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .feature-card p {
+            color: #aaa;
+            font-size: 0.95rem;
         }
 
         .demo-section {
-            text-align: center;
-            margin: 6rem 0;
             background: #050505;
-            padding: 3rem;
-            border: 1px solid #222;
+            padding: 4rem;
+            border: 1px solid #1a1a1a;
+            margin-bottom: 8rem;
             position: relative;
         }
 
-        .demo-section::after {
-            content: "CLANCY / VESTIGE";
+        .demo-section::before {
+            content: "DECODING_VISUAL_DATA";
             position: absolute;
-            bottom: -20px;
-            right: 0;
-            font-size: 0.8rem;
-            color: #444;
-            letter-spacing: 5px;
+            top: -12px;
+            left: 30px;
+            background: #000;
+            padding: 0 15px;
+            font-size: 0.7rem;
+            color: var(--t21p-red);
+            letter-spacing: 3px;
         }
 
         .code-block {
             background: #000;
-            border: 1px dashed #444;
-            padding: 2rem;
+            border-left: 4px solid var(--t21p-red);
+            padding: 2.5rem;
             font-family: 'Courier Prime', monospace;
             overflow-x: auto;
             text-align: left;
             color: #fff;
-            position: relative;
-        }
-
-        .code-block::before {
-            content: "SYSTEM_INPUT";
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            background: #000;
-            padding: 0 10px;
-            font-size: 0.7rem;
-            color: var(--t21p-red);
+            font-size: 1rem;
+            box-shadow: inset 0 0 50px rgba(225, 0, 0, 0.05);
         }
 
         footer {
             text-align: center;
-            padding: 4rem;
-            border-top: 1px solid #222;
-            margin-top: 4rem;
-            color: #444;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            padding: 6rem;
+            border-top: 1px solid #1a1a1a;
+            background: #050505;
         }
 
-        .t21p-logo {
-            font-weight: bold;
-            color: var(--t21p-red);
-        }
-
-        h2 {
+        .footer-logo {
             font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #333;
+            letter-spacing: 8px;
             text-transform: uppercase;
-            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .user-name {
+            color: var(--t21p-red);
+            font-weight: bold;
+            letter-spacing: 2px;
         }
     </style>
 </head>
@@ -208,44 +217,47 @@
 <body>
 
     <header>
+        <span class="logo-symbol">|-/</span>
         <h1>Motion Amp Pro</h1>
-        <p class="hero-subtitle">Scale the icy peaks of perception.</p>
+        <p class="hero-subtitle">Visualiza lo invisible en tiempo real</p>
         <br>
-        <a href="https://github.com/AbyssIzangamer17/motion-amp-pro" class="btn">Enter the Trench</a>
+        <a href="https://github.com/AbyssIzangamer17/motion-amp-pro" class="btn">Acceder al Repositorio</a>
     </header>
 
     <div class="container">
         <div class="demo-section">
-            <h2>Live Feed / Visual Archive</h2>
-            <p>Capturing the pulse of the unseen. Tracking vibrations in the static.</p>
+            <h2 class="section-title">Archivo de Vídeo / Demo</h2>
+            <p>Detección de flujo sanguíneo y micro-vibraciones imperceptibles.</p>
             <div
-                style="background: #000; height: 350px; display: flex; align-items: center; justify-content: center; border: 2px solid #222; position: relative;">
-                <span style="color: #333; font-style: italic;">[ Archive_Footage_Required ]</span>
-                <div style="position: absolute; top: 10px; left: 10px; color: var(--t21p-red); font-size: 0.6rem;">REC ●
-                    00:00:21:09</div>
+                style="background: #000; height: 400px; display: flex; align-items: center; justify-content: center; border: 1px solid #222; position: relative;">
+                <span style="color: #444; font-style: italic; letter-spacing: 2px;">[ REQUIERE_MATERIAL_GRAFICO ]</span>
+                <div
+                    style="position: absolute; bottom: 20px; left: 20px; color: var(--t21p-red); font-size: 0.7rem; font-family: 'Oswald', sans-serif;">
+                    DATA_STREAM_ACTIVE</div>
             </div>
         </div>
 
+        <h2 class="section-title">Especificaciones Técnicas</h2>
         <div class="features">
             <div class="feature-card">
-                <h3>01 / Eulerian Core</h3>
-                <p>Advanced temporal filtering algorithms derived from the depths of Dema. Isolating frequencies beyond
-                    the human horizon.</p>
+                <h3>01 / Eulerian Magnification</h3>
+                <p>Algoritmo basado en filtrado temporal IIR sobre una pirámide Laplaciana para aislar y amplificar
+                    micro-movimientos espaciales.</p>
             </div>
             <div class="feature-card">
-                <h3>02 / Zero Latency</h3>
-                <p>Asynchronous pipelines built for the escape. Real-time processing that keeps pace with the beat of
-                    your heart.</p>
+                <h3>02 / Latencia Cero</h3>
+                <p>Pipeline asíncrono optimizado con Python 3.12+ y OpenCV. Procesa vídeo HD en tiempo real sin retrasos
+                    perceptibles.</p>
             </div>
             <div class="feature-card">
-                <h3>03 / Total Command</h3>
-                <p>Manipulate Alpha, Frequencies, and Exposure. A HUD designed for the few, the proud, and the
-                    emotional.</p>
+                <h3>03 / Control HUD</h3>
+                <p>Ajusta la frecuencia de banda, el factor Alpha y el brillo de la cámara al vuelo con un HUD
+                    profesional interactivo.</p>
             </div>
         </div>
 
-        <div class="container" style="margin-top: 8rem; text-align: center;">
-            <h2>Initial Sequence</h2>
+        <div style="margin-top: 10rem;">
+            <h2 class="section-title">Secuencia de Instalación</h2>
             <div class="code-block">
                 git clone https://github.com/AbyssIzangamer17/motion-amp-pro.git<br>
                 cd motion-amp-pro<br>
@@ -256,7 +268,8 @@
     </div>
 
     <footer>
-        <p>Stay Alive. &copy; 2026 <span class="t21p-logo">|-/</span> Motion Amp Pro</p>
+        <span class="footer-logo">|-/ MOTION AMP PRO</span>
+        <p>Desarrollado por <span class="user-name">AbyssIzangamer17</span> &copy; 2026</p>
     </footer>
 
 </body>
